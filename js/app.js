@@ -94,6 +94,66 @@ var appbase_app = function(){
 
 
 							$(".appbase_total_info").text("No Results found");
+
+							console.log("sdfjkhsd")
+							$this.search_payload = {
+					      "from": 0,
+					      "size": 10,
+					      "fields": ["link"],
+					      "query": {
+					        "multi_match": {
+					          "query": search_query,
+					          "fields": [
+					            "title^3", "body"
+					          ],
+										"operator": "and",
+										"fuzziness": "AUTO"
+					        }
+					      },
+					      "highlight": {
+					        "fields": {
+					          "body": {
+					            "fragment_size": 100,
+					            "number_of_fragments": 2,
+					            "no_match_size": 180
+					          },
+					          "title": {
+					            "fragment_size": 500,
+					            "no_match_size": 500
+					          }
+					        }
+					      }
+					    };
+							$.ajax({
+							  type: "POST",
+					            beforeSend: function (request)
+					            {
+					                request.setRequestHeader("Authorization", "Basic " + btoa("9Y5FRKQBx:5134e787-fb21-4acd-8efa-a19663a9e08e"));
+													console.log("kjsdhflkjasdhf")
+					            },
+							  url: $this.url,
+							  dataType:'json',
+						      contentType:"application/json",
+							  data:  JSON.stringify($this.search_payload),
+							  success: function(full_data){
+							  	var hits = full_data.hits.hits;
+								$this.appbase_increment += hits.length;
+							  	$(".appbase_total_info").html('Showing 1-'+$this.appbase_increment+' of '+$this.appbase_total + " for \""+$('.appbase_input').eq(1).val()+"\"" + "- in " + full_data.took + "ms");
+
+							  	for(var i=0; i< hits.length; i++)
+							  	{
+							  		var data = hits[i];
+							  		var small_link = $('<span>').addClass('small_link').html(data.highlight.title);
+							  		var small_description = $('<p>').addClass('small_description').html(data.highlight.body.join('...')+'...');
+							  		var single_record = $('<a>').attr({'class':'record_link'}).append(small_link).append(small_description);
+
+							  		//var single_record = '<div><a cla href="'+ data.fields.link +'">' + data.highlight.title + '</a><p> ' + data.highlight.body.join('...') + '...</p></div>';
+						      		var tt_record = $('<div>').addClass('tt-suggestion tt-selectable').html(single_record);
+						      		$('.tt-menu .tt-dataset.tt-dataset-my-dataset').append(tt_record);
+						      	}
+						      	$this.appbase_xhr_flag = true;
+							  }
+							});
 	          }
 	          // if(typeof callback != 'undefined')
 	          //   callback();
