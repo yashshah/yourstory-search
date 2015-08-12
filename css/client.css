@@ -2,7 +2,9 @@
   box-sizing: border-box;
 }
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:700,400,600');
-
+em{
+  background-color:yellow !important;
+}
 .appbase_modal{
   display: none;
   position: fixed;
