@@ -65,6 +65,11 @@ var appbase_app = function(){
             // The function signature should be prepare(query, settings), where query is the query #search was called with
             // and settings is the default settings object created internally by the Bloodhound instance. The prepare function should return a settings object.
            prepare: function (query, settings) {
+							 $('.appbase_input').on('input',function(e){
+						      if($('.appbase_input').val() == ''){
+						 			 	$(".appbase_total_info").html("");
+						      }
+						   });
 
                settings.type = "POST";
                settings.xhrFields= {
