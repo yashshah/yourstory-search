@@ -1,7 +1,7 @@
 var appbase_total = 0;
 var appbase_increment = 20;
 var appbase_xhr_flag = true;
-var url = 'http://9Y5FRKQBx:5134e787-fb21-4acd-8efa-a19663a9e08e@scalr.api.appbase.io/1/article/_search';
+var url = 'http://9Y5FRKQBx:5134e787-fb21-4acd-8efa-a19663a9e08e@scalr.api.appbase.io/3/article/_search';
 var search_payload = {
                  "size": "20",
                  "fields": ["link"],
