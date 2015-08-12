@@ -96,7 +96,7 @@ var appbase_app = function(){
 							$(".appbase_total_info").text("No Results found");
 
 							console.log("sdfjkhsd")
-							$this.search_payload = {
+							search_payloa = {
 					      "from": 0,
 					      "size": 10,
 					      "fields": ["link"],
@@ -134,7 +134,7 @@ var appbase_app = function(){
 							  url: $this.url,
 							  dataType:'json',
 						      contentType:"application/json",
-							  data:  JSON.stringify($this.search_payload),
+							  data:  JSON.stringify(search_payloa),
 							  success: function(full_data){
 							  	var hits = full_data.hits.hits;
 								$this.appbase_increment += hits.length;
