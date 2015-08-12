@@ -1,0 +1,100 @@
+body{
+  padding-top: 50px;
+  font-family: 'Open Sans', sans-serif !important;
+}
+h1 sub{
+  bottom: 0.10em !important;
+  font-size: 0.4em;
+}
+a {
+	text-decoration: none !important;
+}
+em{
+  font-weight: 600;
+  font-style: normal;
+}
+.typeahead {
+  font-size: 24px;
+  line-height: 30px;
+}
+.twitter-typeahead {
+  width: 100%;
+}
+.search-box{
+  position: relative;
+}
+.appbase{
+  position:absolute;
+  width:15%;
+  margin: auto;
+  top:0px;
+  bottom: 0px;
+  right: 10px;
+}
+.tt-menu {
+  display: block !important;
+}
+
+.container{
+  position: relative;
+}
+.panel .panel-title{
+  font-size: 22px;
+  line-height: 46px;
+}
+.search-box-container{
+  -webkit-transition:all 0.3s;
+  -moz-transition:all 0.3s;
+  -o-transition:all 0.3s;
+  -ms-transition:all 0.3s;
+  transition:all 0.3s;
+}
+.search-box-container.search-box-container-grow{
+  position: absolute;
+  width: 100%;
+  right: 0;
+  top: 0;
+  background: #fff;
+  padding: 20px;
+  border-radius: 3px;
+  z-index: 10
+}
+.search-box-container-grow .search-box{
+  margin: 10px 0;
+}
+/*#search-title{
+  display: none;
+}*/
+.code_snippet{
+  padding: 12px 16px 0;
+  resize: none;
+  color: #444;
+  background: #f6fcfe;
+  font-size: 12px;
+  line-height: 1.33;
+  border: 1px solid #bbe5f7;
+  height: 200px
+}
+.overlay{
+  display: none;
+  position: fixed;
+  width: 100%;
+  background: rgba(0,0,0,0.50);
+  height: 100%;
+  z-index: 9;
+  top: 0;
+  right: 0;
+}
+@media  (max-width : 600px) {
+  .appbase{
+    width:20%;
+    right:5px;
+  }
+}
+
+p{
+  color: #999 !important;
+}
+
+
+
