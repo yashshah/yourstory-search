@@ -18,7 +18,7 @@ function variables() {
         "multi_match": {
           "query": 'ap',
           "fields": [
-            "title^3", "body"
+            "title", "body"
           ],
           "operator": "and"
         }
