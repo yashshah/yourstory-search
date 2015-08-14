@@ -48,7 +48,7 @@ function variables() {
       },
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       remote: {
-        url: 'http://qHKbcf4M6:78a6cf0e-90dd-4e86-8243-33b459b5c7c5@scalr.api.appbase.io/3/article/_search',
+        url: 'http://scalr.api.appbase.io/3/article/_search',
         //  url: 'http://localhost:9200/digitalocean/article/_search',
         // he time interval in milliseconds that will be used by rateLimitBy. Defaults to 300
         rateLimitWait: 300,
