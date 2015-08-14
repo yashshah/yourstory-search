@@ -1,7 +1,7 @@
 function variables() {
 
   var default_variable = {
-    URL: 'http://qHKbcf4M6:78a6cf0e-90dd-4e86-8243-33b459b5c7c5@scalr.api.appbase.io/3/article/_search',
+    URL: 'http://scalr.api.appbase.io/3/article/_search',
     SIZE: 20,
     SEARCH_PAYLOAD: CreateSearchPayload,
     ENGINE: CreateEngine,
